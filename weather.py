@@ -84,6 +84,10 @@ def generate_status():
     precipListFloat = [item for sublist in precipList for item in sublist]
     pressureListInt = [item for sublist in pressureList for item in sublist]
     windSpeedListInt = [item for sublist in windSpeedList for item in sublist]
+
+    if(abs((int(pressureListInt[0])) - (int(cPressureListInt[0]))) >= 2):
+       print("Yes")
+
     """"
     Morning 12-6 AM 
     JSON: 3 and 6 AM [0][1]
@@ -99,7 +103,7 @@ def generate_status():
     """ 
     ##Get Current time
     now = datetime.now()
-
+    
     if now.hour <= 3:
         if(int(windGustListInt[0]) >= 24):
             print("Moderate Wind Gust recorded between 12:00 AM and 3:00 AM")
@@ -111,7 +115,7 @@ def generate_status():
             print('Moderate Precipitation recorded between 12:00 AM and 3:00 AM')
         elif(int(windSpeedListInt[0]) >= 24):
             print('Moderate Wind Speed recorded between 12:00 AM and 3:00 AM')
-        elif abs((int(pressureListInt[0])) - (int(cPressureListInt[0]))) >= 2 or (int(pressureListInt[0]) <= 28) or (int(pressureListInt[0] >= 31)):
+        elif(int(pressureListInt[0]) - int(cPressureListInt[0]) >= 2) or int(pressureListInt[0]) <= 28 or int(pressureListInt[0]) >= 31:
             print("High pressure changes recorded between 12:00 AM and 3:00 AM")
     if now.hour >= 3 and now.hour <= 6:
         if(int(windGustListInt[1]) >= 24):
@@ -124,7 +128,7 @@ def generate_status():
             print('Moderate Precipitation recorded between 3:00 AM and 6:00 AM')
         elif(int(windSpeedListInt[1]) >= 24):
             print('Moderate Wind Speed recorded between 3:00 AM and 6:00 AM')
-        elif abs((int(pressureListInt[1])) - (int(cPressureListInt[0]))) >= 2 or (int(pressureListInt[1]) <= 28) or (int(pressureListInt[1] >= 31)):
+        elif(int(pressureListInt[1]) - int(cPressureListInt[0]) >= 2) or int(pressureListInt[1]) <= 28 or int(pressureListInt[1]) >= 31:
             print("High pressure changes recorded between 3:00 AM and 6:00 AM")
     if now.hour >= 6 and now.hour <= 9:
         if(int(windGustListInt[2]) >= 24):
@@ -137,7 +141,7 @@ def generate_status():
             print('Moderate Precipitation recorded between 6:00 AM and 9:00 AM')
         elif(int(windSpeedListInt[2]) >= 24):
             print('Moderate Wind Speed recorded between 6:00 AM and 9:00 AM')
-        elif abs((int(pressureListInt[2])) - (int(cPressureListInt[0]))) >= 2 or (int(pressureListInt[2]) <= 28) or (int(pressureListInt[2] >= 31)):
+        elif(int(pressureListInt[2]) - int(cPressureListInt[0]) >= 2) or int(pressureListInt[2]) <= 28 or int(pressureListInt[2]) >= 31:
             print("High pressure changes recorded between 6:00 AM and 9:00 AM")
     if now.hour >= 9 and now.hour <= 12:
         if(int(windGustListInt[3]) >= 24):
@@ -150,7 +154,7 @@ def generate_status():
             print('Moderate Precipitation recorded between 9:00 AM and 12:00 PM')
         elif(int(windSpeedListInt[3]) >= 24):
             print('Moderate Wind Speed recorded between 9:00 AM and 12:00 PM')
-        elif abs((int(pressureListInt[3])) - (int(cPressureListInt[0]))) >= 2 or (int(pressureListInt[3]) <= 28) or (int(pressureListInt[3] >= 31)):
+        elif(int(pressureListInt[3]) - int(cPressureListInt[0]) >= 2) or int(pressureListInt[3]) <= 28 or int(pressureListInt[3]) >= 31:
             print("High pressure changes recorded between 9:00 AM and 12:00 PM")
     if now.hour >= 12 and now.hour <= 15:
         if(int(windGustListInt[4]) >= 24):
@@ -163,7 +167,7 @@ def generate_status():
             print('Moderate Precipitation recorded between 12:00 PM and 3:00 PM')
         elif(int(windSpeedListInt[4]) >= 24):
             print('Moderate Wind Speed recorded between 12:00 PM and 3:00 PM')
-        elif abs((int(pressureListInt[4])) - (int(cPressureListInt[0]))) >= 2 or (int(pressureListInt[4]) <= 28) or (int(pressureListInt[4] >= 31)):
+        elif(int(pressureListInt[4]) - int(cPressureListInt[0]) >= 2) or int(pressureListInt[4]) <= 28 or int(pressureListInt[4]) >= 31:
             print("High pressure changes recorded between 12:00 PM and 3:00 PM")
     if now.hour >= 15 and now.hour <= 18:
         if(int(windGustListInt[5]) >= 24):
@@ -176,7 +180,7 @@ def generate_status():
             print('Moderate Precipitation recorded between 3:00 PM and 6:00 PM')
         elif(int(windSpeedListInt[5]) >= 24):
             print('Moderate Wind Speed recorded between 3:00 PM and 6:00 PM')
-        elif abs((int(pressureListInt[5])) - (int(cPressureListInt[0]))) >= 2 or (int(pressureListInt[5]) <= 28) or (int(pressureListInt[5] >= 31)):
+        elif(int(pressureListInt[5]) - int(cPressureListInt[0]) >= 2) or int(pressureListInt[5]) <= 28 or int(pressureListInt[5]) >= 31:
             print("High pressure changes recorded between 3:00 PM and 6:00 PM")
     if now.hour >= 18 and now.hour <= 21:
         if(int(windGustListInt[6]) >= 24):
@@ -189,7 +193,7 @@ def generate_status():
             print('Moderate Precipitation recorded between 6:00 PM and 9:00 PM')
         elif(int(windSpeedListInt[6]) >= 24):
             print('Moderate Wind Speed recorded between 6:00 PM and 9:00 PM')
-        elif abs((int(pressureListInt[6])) - (int(cPressureListInt[0]))) >= 2 or (int(pressureListInt[6]) <= 28) or (int(pressureListInt[6] >= 31)):
+        elif(int(pressureListInt[6]) - int(cPressureListInt[0]) >= 2) or int(pressureListInt[6]) <= 28 or int(pressureListInt[6]) >= 31:
             print("High pressure changes recorded between 6:00 PM and 9:00 PM")
     if now.hour >= 21 and now.hour <= 24:
         if(int(windGustListInt[7]) >= 24):
@@ -202,7 +206,7 @@ def generate_status():
             print('Moderate Precipitation recorded between 9:00 PM and 12:00 AM')
         elif(int(windSpeedListInt[7]) >= 24):
             print('Moderate Wind Speed recorded between 9:00 PM and 12:00 AM')
-        elif abs((int(pressureListInt[7])) - (int(cPressureListInt[0]))) >= 2 or (int(pressureListInt[7]) <= 28) or (int(pressureListInt[7] >= 31)):
+        elif(int(pressureListInt[7]) - int(cPressureListInt[0]) >= 2) or int(pressureListInt[7]) <= 28 or int(pressureListInt[7]) >= 31:
             print("High pressure changes recorded between 9:00 PM and 12:00 AM")
     else:
         if(float(cPrecipListFloat[0]) > 0.3):
@@ -210,6 +214,7 @@ def generate_status():
         elif(int(cWindSpeedListInt[0]) >= 24):
             print('Moderate Wind Speed recorded around current time')
         print('No weather anomalies detected. Delivery will proceded as scheduled.')
+
 #Run every hour
 get_data(location)
 parse_data()
